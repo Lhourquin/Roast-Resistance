@@ -59,3 +59,7 @@ Avant d'aborder en détails les préventions qui seront mises en place, nous dev
  - Détection et information
 
 Ces différentes étapes vont nous permmettre de mettre en place nos règles de sécurité des le début, afin d'annalyser les besoin de sécurité liés à notre projet, de la manières la plus adapté et efficace possible, et veiller à les respecter tout au long de la phase de développement. 
+
+#### 1.1 Moindre privilèges
+
+Nous devrons définir les roles de chaque utilisateur pour lui octroyer les permissions qui lui conviennent, leurs roles à chacun, comme dit plus haut lors de l'authentification nous devons dissocier les droit des professeur et des apprenant. L'apprenant pourras donc seulement consulter, s'inscrire à une ou plusieurs formation, tandis que le professeur pourras lui publier, modifier, et évaluer les apprenant.
