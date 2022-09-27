@@ -69,3 +69,9 @@ Nous devrons définir les roles de chaque utilisateur pour lui octroyer les perm
 #### 2.1 Same-Origin Policy (SOP)
 
 SOP nous sert à mettre en place un cadre permettant de controller et restreindre la communication entre composant lorsque ceux-ci sont d'Origin différente, l’Origin d’une page étant définie par le triplet protocole, destination et port présent dans la barre d’adresse, dans notre cas il d'agit de pire2pire.com. Dans notre cas à nous, nous souhaitont que notre Origin communique uniquement avec les composant nécéssaire. Nos cookies, fichier multimédia, code JavaScript/CSS, ne sera accessible que par notre Origin. Dans le cas d'une utilisation d'API, nous pourront contourner cettre restriction par défaut grace au CORS, c'est ce que nous allons voir dans la section suivante.
+
+<!-- Sujet CORS expliquer par habayatou  -->
+### Cross-Site Scripting (XSS)
+
+Nous devrons mettre en place les bonne prtaique afin d'évier les ataques XSS, ataque qui consiste à l'aide d'un script JavaScript injecter dans la pâge web de modifer le comportment du navigateur et de récupérer des donées sensible, par exemple les cookies de session d'un utilisateur, ces coordonée etc. Nous allons aborder quelque solutions adapter afin de limiter ce risques potentiel.
+
