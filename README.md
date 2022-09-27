@@ -75,3 +75,6 @@ SOP nous sert à mettre en place un cadre permettant de controller et restreindr
 
 Nous devrons mettre en place les bonne prtaique afin d'évier les ataques XSS, ataque qui consiste à l'aide d'un script JavaScript injecter dans la pâge web de modifer le comportment du navigateur et de récupérer des donées sensible, par exemple les cookies de session d'un utilisateur, ces coordonée etc. Nous allons aborder quelque solutions adapter afin de limiter ce risques potentiel.
 
+#### Mode Strict 
+
+Le mode strict nous permet d'imposer un comportement un peu plus rigide à JavaScript, en effet JavaScript est un langage assez souple et permissif sur la syntaxe ou le traitement des différent types de données. Grace à l'activation de ce mode strict, certaines mauvaise pratique ne peuvent plus être ignorer et JavaScript nous informeras de celle-ci, tel que des fonction/syntaxe déprécié et peu compatible avec nos navigateurs moderne voir même totalement obsolete et incomptabile, ce qui nous aieras à écrire un code plus adapter et plus sécuriser contre les attaques XSS. 
