@@ -41,3 +41,8 @@ Lorsque l'utilisateur (apprenant ou formateur) s'inscrit, son mot de passe est s
 Lorsqu'une session est créée (lors de l'authentification par exemple), celle-ci est valable pour une durée d'une semaine pour les formateurs. Les informations présentes y étant plus sensible, il faut vérifier régulièrement que les facteurs d'authentification ne soient pas compromis. Ainsi, la session stockée dans un cookie est supprimée au bout de 7 jours. 
 
 Egalement, tous les ans, les formateurs doivent réinitialiser leur mot de passe afin de conserver la conformité des facteurs d'authentification.
+
+### 1.5 La journalisation
+
+Chaque événement est inscrit dans un journal. Celui-ci doit être privé au développeur afin de connaître et suivre d'éventuels problème lié à l'authentification. Les informations suivantes sont recencées : date et heure de connexion, IP, localisation et e-mail utilisé pour la tentative d'authentification. 
+En cas de tentative d'authentification étrange, venant d'une même IP par exemple, le compte pourrait être banni jusqu'à confirmation de l'adresse mail par exemple.
