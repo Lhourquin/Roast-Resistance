@@ -22,3 +22,12 @@ Une fois l’authentification réalisée, cette dernière (ou un autre service) 
 Chacune des deux entités a sa propre conformité de mot de passe. 
 Un apprenant par exemple doit avoir un mot de passe composé de 8 caractères, avec des minuscules et des majuscules ainsi que des caractères spéciaux. 
 
+Une génération de mot de passe est également proposée afin que la personne voulant s'inscrire sur la plateforme puisse créer son mot de passe sécurisé en 1 clique. 
+
+### 1.3 Sécurité
+
+Pour s'authentifier, chacun des deux acteurs doit utilisé son mot de passe précédemment créé.
+Cependant, suite à 10 échecs de connexion, le compte sera bloqué pour éviter tout risque d'attaque par force brute (tests automatisés de tous les mots de passe et de toutes les clés
+cryptographiques possibles). 
+
+Le formateur doit, quant à lui, se protéger davantage à l'aide d'une authentification multifacteur à l'aide de son adresse mail. Le formateur recevra donc un e-mail sur la boîte mail renseigné afin d'authentifier qu'il s'agîsse bien de lui.
