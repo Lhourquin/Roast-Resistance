@@ -63,3 +63,10 @@ Ces différentes étapes vont nous permmettre de mettre en place nos règles de 
 #### 1.1 Moindre privilèges
 
 Nous devrons définir les roles de chaque utilisateur pour lui octroyer les permissions qui lui conviennent, leurs roles à chacun, comme dit plus haut lors de l'authentification nous devons dissocier les droit des professeur et des apprenant. L'apprenant pourras donc seulement consulter, s'inscrire à une ou plusieurs formation, tandis que le professeur pourras lui publier, modifier, et évaluer les apprenant.
+
+### 2. Mise en œuvre des mécanismes de sécurité web
+
+#### 2.1 Same-Origin Policy (SOP)
+
+SOP nous sert à mettre en place un cadre permettant de controller et restreindre la communication entre composant lorsque ceux-ci sont d'Origin différente, l’Origin d’une page étant définie par le triplet protocole, destination et port présent dans la barre d’adresse, dans notre cas il d'agit de pire2pire.com. Dans notre cas à nous, nous souhaitont que notre Origin ne communique pas avec d'autres services différents.
+
