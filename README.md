@@ -22,3 +22,15 @@ Une fois l’authentification réalisée, cette dernière (ou un autre service) 
 Chacune des deux entités a sa propre conformité de mot de passe. 
 Un apprenant par exemple doit avoir un mot de passe composé de 8 caractères, avec des minuscules et des majuscules ainsi que des caractères spéciaux. 
 
+## Standars de sécurité côté navigateur
+
+### 1. Règles d'hygiene. 
+
+Avant d'aborder en détails les préventions qui seront mises en place, nous devons nous rappeler des princiapl étapes liée au développement de notre application web, qui sont : 
+ - La conception du site ou de l'application
+ - L'intégrité du comportemet de l'application côté client
+ - La configuration de l'infrasctructure d'hébergement
+ - Détection et information
+
+Ces différentes étapes vont nous permmettre de mettre en place nos règles de sécurité des le début, afin d'annalyser les besoin de sécurité liés à notre projet, de la manières la plus adapté et efficace possible, et veiller à les respecter tout au long de la phase de développement. 
+
