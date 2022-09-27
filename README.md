@@ -31,3 +31,13 @@ Cependant, suite à 10 échecs de connexion, le compte sera bloqué pour éviter
 cryptographiques possibles). 
 
 Le formateur doit, quant à lui, se protéger davantage à l'aide d'une authentification multifacteur à l'aide de son adresse mail. Le formateur recevra donc un e-mail sur la boîte mail renseigné afin d'authentifier qu'il s'agîsse bien de lui.
+
+Lors de l'authentification, chaque envoie en base de données (pour checker s'il s'agît bien du bon mot de passe par exemple) est chiffré de bout en bout grâce au protocole de cryptage TLS.
+
+Lorsque l'utilisateur (apprenant ou formateur) s'inscrit, son mot de passe est stocké en base de données. Pour éviter tout problème lors d'une éventuelle infiltration sur le serveur stockant les données, chaque mot de passe est hashé grâce à SHA-256, une fonction de hashage permettant de transformer le mot de passe de l'utilisateur afin que celui-ci soit inexploitable aux premiers abords.
+
+### 1.4 Les durées
+
+Lorsqu'une session est créée (lors de l'authentification par exemple), celle-ci est valable pour une durée d'une semaine pour les formateurs. Les informations présentes y étant plus sensible, il faut vérifier régulièrement que les facteurs d'authentification ne soient pas compromis. Ainsi, la session stockée dans un cookie est supprimée au bout de 7 jours. 
+
+Egalement, tous les ans, les formateurs doivent réinitialiser leur mot de passe afin de conserver la conformité des facteurs d'authentification.
