@@ -78,3 +78,7 @@ Nous devrons mettre en place les bonne prtaique afin d'évier les ataques XSS, a
 #### Mode Strict 
 
 Le mode strict nous permet d'imposer un comportement un peu plus rigide à JavaScript, en effet JavaScript est un langage assez souple et permissif sur la syntaxe ou le traitement des différent types de données. Grace à l'activation de ce mode strict, certaines mauvaise pratique ne peuvent plus être ignorer et JavaScript nous informeras de celle-ci, tel que des fonction/syntaxe déprécié et peu compatible avec nos navigateurs moderne voir même totalement obsolete et incomptabile, ce qui nous aieras à écrire un code plus adapter et plus sécuriser contre les attaques XSS. 
+
+#### Satinization ( Nettoyage HTML )
+
+La Satinization permet elle aussi de limiter les attaque XSS, à l'aide de l'API Satinizer, nous allons rendre notre HTML potentiellement non fiable un peu plus sur. A l'aide de ces method fournis par notre API, selon les contexte et la particularité d'une balise HTML, celle-ci sera insérer dans une autre balise adapter si besoin, ou supprimer si nécéssaire, ou encore, dans le cas ou nous utilisons JavaScript pour insérer des élément HTML, nous pourions utiliser des méthod de cette API afin d'en effacer un code JavaScript détecter dans ces élément HTML, ce qui permet de limiter les attaques XSS.
