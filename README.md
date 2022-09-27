@@ -68,5 +68,4 @@ Nous devrons définir les roles de chaque utilisateur pour lui octroyer les perm
 
 #### 2.1 Same-Origin Policy (SOP)
 
-SOP nous sert à mettre en place un cadre permettant de controller et restreindre la communication entre composant lorsque ceux-ci sont d'Origin différente, l’Origin d’une page étant définie par le triplet protocole, destination et port présent dans la barre d’adresse, dans notre cas il d'agit de pire2pire.com. Dans notre cas à nous, nous souhaitont que notre Origin ne communique pas avec d'autres services différents.
-
+SOP nous sert à mettre en place un cadre permettant de controller et restreindre la communication entre composant lorsque ceux-ci sont d'Origin différente, l’Origin d’une page étant définie par le triplet protocole, destination et port présent dans la barre d’adresse, dans notre cas il d'agit de pire2pire.com. Dans notre cas à nous, nous souhaitont que notre Origin communique uniquement avec les composant nécéssaire. Nos cookies, fichier multimédia, code JavaScript/CSS, ne sera accessible que par notre Origin. Dans le cas d'une utilisation d'API, nous pourront contourner cettre restriction par défaut grace au CORS, c'est ce que nous allons voir dans la section suivante.
