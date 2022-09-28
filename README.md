@@ -46,3 +46,39 @@ Egalement, tous les ans, les formateurs doivent réinitialiser leur mot de passe
 
 Chaque événement est inscrit dans un journal. Celui-ci doit être privé au développeur afin de connaître et suivre d'éventuels problème lié à l'authentification. Les informations suivantes sont recencées : date et heure de connexion, IP, localisation et e-mail utilisé pour la tentative d'authentification. 
 En cas de tentative d'authentification étrange, venant d'une même IP par exemple, le compte pourrait être banni jusqu'à confirmation de l'adresse mail par exemple.
+
+
+## Standars de sécurité côté navigateur
+
+### 1. Règles d'hygiene. 
+
+Avant d'aborder en détails les préventions qui seront mises en place, nous devons nous rappeler des princiapl étapes liée au développement de notre application web, qui sont : 
+ - La conception du site ou de l'application
+ - L'intégrité du comportemet de l'application côté client
+ - La configuration de l'infrasctructure d'hébergement
+ - Détection et information
+
+Ces différentes étapes vont nous permmettre de mettre en place nos règles de sécurité des le début, afin d'annalyser les besoin de sécurité liés à notre projet, de la manières la plus adapté et efficace possible, et veiller à les respecter tout au long de la phase de développement. 
+
+#### 1.1 Moindre privilèges
+
+Nous devrons définir les roles de chaque utilisateur pour lui octroyer les permissions qui lui conviennent, leurs roles à chacun, comme dit plus haut lors de l'authentification nous devons dissocier les droit des professeur et des apprenant. L'apprenant pourras donc seulement consulter, s'inscrire à une ou plusieurs formation, tandis que le professeur pourras lui publier, modifier, et évaluer les apprenant.
+
+### 2. Mise en œuvre des mécanismes de sécurité web
+
+#### 2.1 Same-Origin Policy (SOP)
+
+SOP nous sert à mettre en place un cadre permettant de controller et restreindre la communication entre composant lorsque ceux-ci sont d'Origin différente, l’Origin d’une page étant définie par le triplet protocole, destination et port présent dans la barre d’adresse, dans notre cas il d'agit de pire2pire.com. Dans notre cas à nous, nous souhaitont que notre Origin communique uniquement avec les composant nécéssaire. Nos cookies, fichier multimédia, code JavaScript/CSS, ne sera accessible que par notre Origin. Dans le cas d'une utilisation d'API, nous pourront contourner cettre restriction par défaut grace au CORS, c'est ce que nous allons voir dans la section suivante.
+
+<!-- Sujet CORS expliquer par habayatou  -->
+### Cross-Site Scripting (XSS)
+
+Nous devrons mettre en place les bonne prtaique afin d'évier les ataques XSS, ataque qui consiste à l'aide d'un script JavaScript injecter dans la pâge web de modifer le comportment du navigateur et de récupérer des donées sensible, par exemple les cookies de session d'un utilisateur, ces coordonée etc. Nous allons aborder quelque solutions adapter afin de limiter ce risques potentiel.
+
+#### Mode Strict 
+
+Le mode strict nous permet d'imposer un comportement un peu plus rigide à JavaScript, en effet JavaScript est un langage assez souple et permissif sur la syntaxe ou le traitement des différent types de données. Grace à l'activation de ce mode strict, certaines mauvaise pratique ne peuvent plus être ignorer et JavaScript nous informeras de celle-ci, tel que des fonction/syntaxe déprécié et peu compatible avec nos navigateurs moderne voir même totalement obsolete et incomptabile, ce qui nous aieras à écrire un code plus adapter et plus sécuriser contre les attaques XSS. 
+
+#### Satinization ( Nettoyage HTML )
+
+La Satinization permet elle aussi de limiter les attaque XSS, à l'aide de l'API Satinizer, nous allons rendre notre HTML potentiellement non fiable un peu plus sur. A l'aide de ces method fournis par notre API, selon les contexte et la particularité d'une balise HTML, celle-ci sera insérer dans une autre balise adapter si besoin, ou supprimer si nécéssaire, ou encore, dans le cas ou nous utilisons JavaScript pour insérer des élément HTML (template string ES6), nous pourions utiliser des méthod de cette API afin d'en effacer un code JavaScript détecter dans ces élément HTML, ce qui permet de limiter les attaques XSS.
