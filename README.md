@@ -70,26 +70,26 @@ Nous devrons définir les rôles de chaque utilisateur pour lui octroyer les per
 
 SOP nous sert à mettre en place un cadre permettant de contrôler et restreindre la communication entre composant lorsque ceux-ci sont d'Origin différente, l’Origin d’une page étant définie par le triplet protocole, destination et port présent dans la barre d’adresse, dans notre cas il d'agit de https://pire2pire.com:80. Dans notre cas à nous, nous souhaitons que notre Origin communique uniquement avec les composants nécéssaires. Nos cookies, fichiers multimédias, code JavaScript/CSS, ne sera accessible que par notre Origin. Dans le cas d'une utilisation d'API, nous pourrons contourner cette restriction par défaut grâce au CORS, c'est ce que nous allons voir dans la section suivante.
 
-### Cross-Origin Resource Sharing (CORS)
+### 2.2 Cross-Origin Resource Sharing (CORS)
 
 Les politique de même origine est un mécanisme de sécurité critique qui limite la manière dont un document ou un script chargé à partir d'une origine peut interagir avec une ressource d'une autre origine.
 Il nous permettera d'isoler les documents potentiellement malveillants, réduisant ainsi les vecteurs d'attaque possibles sur l'application.
 
 Le CORS nous permettra de prendre en charge des requêtes multi-origines sécurisées et des transferts de données entre des navigateurs et des serveurs web. Les navigateurs récents utilisent le CORS dans une API contenante comme XMLHttpRequest ou Fetch pour nous aider à réduire les risques de requêtes HTTP multi-origines dans notre application pire2pire.com
 
-### Cross-Site Scripting (XSS)
+### 2.3 Cross-Site Scripting (XSS)
 
 Nous devrons mettre en place les bonnes pratiques afin d'éviter les attaques XSS, attaque qui consiste à l'aide d'un script JavaScript injecté dans la pâge web de modifier le comportement du navigateur et de récupérer des données sensibles, par exemple les cookies de session d'un utilisateur, ses coordonnées etc. Nous allons aborder quelques solutions adaptées afin de limiter ce risque potentiel.
 
-#### Mode Strict
+#### 2.4 Mode Strict
 
 Le mode strict nous permet d'imposer un comportement un peu plus rigide à JavaScript, en effet JavaScript est un langage assez souple et permissif sur la syntaxe ou le traitement des différents types de données. Grâce à l'activation de ce mode strict, certaines mauvaises pratiques ne peuvent plus être ignorées et JavaScript nous informera de celle-ci, tel que des fonctions/syntaxes dépréciées et peu compatible avec nos navigateurs modernes voire même totalement obsolète et incomptabile, ce qui nous aidera à écrire un code plus adapté et plus sécurisé contre les attaques XSS.
 
-#### Satinization ( Nettoyage HTML )
+#### 2.5 Satinization ( Nettoyage HTML )
 
 La Satinization permet elle aussi de limiter les attaques XSS, à l'aide de l'API Satinizer, nous allons rendre notre HTML potentiellement non fiable un peu plus sûr. A l'aide de ces methodes fournies par notre API, selon les contextes et la particularité d'une balise HTML, celle-ci sera insérée dans une autre balise adaptée si besoin, ou supprimée si nécessaire, ou encore, dans le cas où nous utilisons JavaScript pour insérer des éléments HTML (template string ES6), nous pourrions utiliser des méthodes de cette API afin d'en effacer un code JavaScript détecté dans ces éléments HTML, ce qui permet de limiter les attaques XSS.
 
-### Cookies
+### 2.6 Cookies
 
 La mise en place des cookies dans pire2pire.com nous permettra de récupérer les fichiers créés par l'application. Ils faciliteront l'expérience de nos utilisateurs en ligne en enregistrant certaines informations de navigation. Grâce aux cookies, l'application pourra effectuer les opérations suivantes :
 
@@ -98,7 +98,7 @@ La mise en place des cookies dans pire2pire.com nous permettra de récupérer le
 - Proposer des contenus adaptés et pertinents en fonction de la position géographique
 - Permettre d'améliorer les services de nos utilsateurs
 
-### Content Security Policy ( CSP)
+### 2.7 Content Security Policy ( CSP)
 
 On mettra en place dans notre application le système CSP qui permet de bloquer l'exécution d'attaques côté client dans le navigateur et d'envoyer au serveur des rapports de violation.
 Il n'est pas destiné à remplacer le filtrage des entrées et la protection des sorties dans le code, mais à apporter une couche de sécurité supplémentaire pour empêcher l'exécution de XSS et l'interprétation de données injectées.
